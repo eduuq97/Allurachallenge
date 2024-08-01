@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <main id="app" class="app">
+        <section class="grid">
+          <section class="app-content">
+            <header>
+                <a class="a-logo-alura" href="https://www.aluracursos.com" target="_blank"><img class="logo-alura" src="assets/img/Logo.png" alt="logo de alura."></a>
+            </header>
+            <section class="app-encript">
+              <textarea class="text-encript" id="text-encript" placeholder="Ingrese el texto aqui" value=""></textarea>
+              <i class="bi bi-exclamation-circle-fill"></i>
+              <label>Solo letras minúsculas y sin acentos.</label>
+              <section class="app-main-btns">
+                <button class="btn-encript" id="btn-encript" value="encriptar">Encriptar</button>
+                <button class="btn-desencript" id="btn-desencript" value="desencriptar">Desencriptar</button>
+              </section>
+            </section>
+          </section>
+          <section class="app-result">
+            <div class="container-cover" id="cover">
+              <img src="assets/img/Muñeco.png"alt="img"/>
+              <h3>Ningún mensaje fue encontrado</h3>
+              <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+            <p id="text-desencript"></p>
+          </section>
+        </section>
+      </main>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
