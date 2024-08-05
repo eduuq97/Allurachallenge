@@ -3,6 +3,7 @@
 const btn_encript = document.getElementById("btn-encript");
 const btn_desencript = document.getElementById("btn-desencript");
 const filter = /[A-Z~!@#$%^&*()_+|}{[\]\\\/?=><:"`;.,áéíóúàèìòù'1-9]/g;
+const btn_copy = document.getElementById("btn-copy");
 
 // Funcion que verifica los inputs 
 function verify(){
@@ -13,7 +14,7 @@ function verify(){
         Swal.fire({
             icon: 'error',
             title: 'Error!',
-            text: 'Solo letras minúsuclas y sin acentos',
+            text: 'Solo letras minúsuclas y sin acentos.',
         });
     }
 }
@@ -68,9 +69,11 @@ function desencript(){
 function hideCover(){
     let empty_text = "";
     let text_area = document.getElementById("text-desencript").value;
+    let cover = document.getElementById("cover");
     if (empty_text !== text_area){
         document.getElementById("cover").style.display = "none";
-    }else document.getElementById("cover").style.display = "";
+    } else 
+        document.getElementById("cover").style.display = "";
         showDesencriptArea(text_area);
 }
 
@@ -78,6 +81,33 @@ function showDesencriptArea(text_area) {
     document.getElementById('text-desencript').style.display = 'block';
     document.getElementById('text-desencript').innerHTML = text_area;
   }
+
+  function copy() {
+    // Obténer el texto del párrafo
+    const resultP = document.getElementById('text-desencript').innerText;
+
+    // Usa la API de Portapapeles para copiar el texto
+    navigator.clipboard.writeText(resultP)
+        .then(() => {
+            btn_copy.innerText = 'Copiado';
+            setTimeout(() => {
+                btn_copy.innerText = 'Copiar';
+            }, 3000);
+            Swal.fire({
+                icon: 'success',
+                title: '¡Copiado!',
+                text: 'Texto copiado al portapapeles.',
+            });
+        })
+        .catch(err => {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: 'Error al copiar el texto',
+            });
+            console.error('Error al copiar el texto: ', err);
+        });
+}
 
 
 
@@ -87,3 +117,5 @@ btn_encript.addEventListener("click", encript);
 
 btn_desencript.addEventListener("click", verify);
 btn_desencript.addEventListener("click", desencript);
+
+btn_copy.addEventListener("click", copy);

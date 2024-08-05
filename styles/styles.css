@@ -15,7 +15,7 @@
 }
 
 .logo-alura:hover{
-    transform: translateY(5px);
+    transform: translateY(10px);
 }
 
   .app {
@@ -51,7 +51,7 @@
   }
   
   .app .grid .app-result {
-    height: 100%;
+    height: calc(100% - 40px);
     grid-column: span 4;
     background: #fff;
     border-radius: 32px;
@@ -78,13 +78,6 @@
     min-height: 80%;
     background: transparent;
     resize: none;
-  }
-
-  .app-result textarea {
-    border: none;
-    background: transparent;
-    resize: none;
-    
   }
 
   .text-encript {
@@ -149,6 +142,24 @@
     border-radius: 16px;
   }
 
+
+
+  /*Colocando estilos a las alertas*/
+  .swal2-title {
+    color: #343A40; /* Tomate */
+    font-family: "Inter", sans-serif;
+}
+
+  .swal2-html-container {
+    font-family: 'Inter', sans-serif;
+}
+
+  .swal2-actions .swal2-confirm {
+    background-color: var(--color-primary); /* Azul real */
+    border: none;
+    font-family: "Inter", sans-serif;
+}
+ 
   /*vista tablet */
   @media (max-width: 768px){
     
