@@ -4,6 +4,7 @@ const btn_encript = document.getElementById("btn-encript");
 const btn_desencript = document.getElementById("btn-desencript");
 const filter = /[A-Z~!@#$%^&*()_+|}{[\]\\\/?=><:"`;.,áéíóúàèìòù'1-9]/g;
 const btn_copy = document.getElementById("btn-copy");
+const text_area = document.getElementById("text-encript");
 
 // Funcion que verifica los inputs 
 function verify(){
@@ -72,15 +73,17 @@ function hideCover(){
     let cover = document.getElementById("cover");
     if (empty_text !== text_area){
         document.getElementById("cover").style.display = "none";
-    } else 
+    } else {
         document.getElementById("cover").style.display = "";
-        showDesencriptArea(text_area);
+    }
+    showDesencriptArea(text_area);
 }
 
 function showDesencriptArea(text_area) {
     document.getElementById('text-desencript').style.display = 'block';
     document.getElementById('text-desencript').innerHTML = text_area;
   }
+
 
   function copy() {
     // Obténer el texto del párrafo
@@ -114,8 +117,13 @@ function showDesencriptArea(text_area) {
 btn_encript.addEventListener("click", verify);
 btn_encript.addEventListener("click", encript);
 
-
 btn_desencript.addEventListener("click", verify);
 btn_desencript.addEventListener("click", desencript);
 
 btn_copy.addEventListener("click", copy);
+text_area.addEventListener("keydown", (event) => {
+    if (event.code === "Backspace") {
+        verify();
+        encript();
+    }
+});

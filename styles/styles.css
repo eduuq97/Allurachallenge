@@ -40,7 +40,7 @@
     background: transparent;
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 60px;
     overflow: visible;
   }
 
@@ -141,7 +141,6 @@
     object-fit: cover;
     border-radius: 16px;
   }
-
 
 
   /*Colocando estilos a las alertas*/
