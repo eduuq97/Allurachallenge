@@ -2,7 +2,8 @@
 
 :root {
   --color-primary: #0A3871;
-  --color-secondary: #495057 ;
+  --color-secondary: #495057;
+  --color-hover: #0C4B9B;
 }
 
 * {
@@ -114,12 +115,24 @@
   .btn-encript {
     background-color: var(--color-primary);
     color: #FFFFFF;
-  }
+    border-color: var(--color-primary);
+}
 
-  .btn-desencript {
+.btn-encript:hover {
+    background-color: var(--color-hover);
+    border-color: var(--color-hover);
+}
+
+.btn-desencript {
     background-color: #D8DFE8;
     color: var(--color-primary);
-  }
+    border-color: #D8DFE8;
+}
+
+.btn-desencript:hover {
+    background-color: #B0B7C3;
+    border-color: #B0B7C3;
+}
   
   .app .grid .app-result h3 {
     margin-top: 16px;
@@ -141,6 +154,11 @@
     object-fit: cover;
     border-radius: 16px;
   }
+
+  .container-hidden {
+    display: none;
+  }
+
 
 
   /*Colocando estilos a las alertas*/
