@@ -2,7 +2,8 @@
 
 :root {
   --color-primary: #0A3871;
-  --color-secondary: #495057 ;
+  --color-secondary: #495057;
+  --color-hover: #0C4B9B;
 }
 
 * {
@@ -15,7 +16,7 @@
 }
 
 .logo-alura:hover{
-    transform: translateY(5px);
+    transform: translateY(15px);
 }
 
   .app {
@@ -30,8 +31,9 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;
-    height: calc(100vh - 120px);
-    padding-top: 40px;
+    min-height: calc(100vh - 120px);
+    height: auto;
+    padding: 40px 0;
   }
   
   .app .grid .app-content {
@@ -40,8 +42,7 @@
     background: transparent;
     display: flex;
     flex-direction: column;
-    gap: 80px;
-    overflow: visible;
+    gap: 60px;
   }
 
   .app .grid .app-content label {
@@ -51,7 +52,7 @@
   }
   
   .app .grid .app-result {
-    height: 100%;
+    height: calc(100% - 40px);
     grid-column: span 4;
     background: #fff;
     border-radius: 32px;
@@ -61,9 +62,11 @@
     flex-direction: column;
     gap: 16px;
     text-align: center;
-    padding: 32px;
+    padding: 42px;
     align-items: center;
     justify-content: center;
+    height: auto;
+    overflow-wrap: break-word;
   }
   
   .app-encript {
@@ -75,42 +78,29 @@
     min-width: 100%;
     border: none;
     max-height: 80%;
-    min-height: 80%;
+    min-height: 300px;
     background: transparent;
     resize: none;
   }
 
-  .app-result textarea {
-    border: none;
-    background: transparent;
-    resize: none;
-    
-  }
-
-  .text-encript {
+  .text-encript,.text-encript::placeholder  {
     color: var(--color-primary);
     font-family: "Inter", sans-serif ;
     font-size: 32px;
     text-align: left;
   }
 
-  .text-encript::placeholder {
-    color: var(--color-primary);
-    font-family: "Inter", sans-serif ;
-    font-size: 32px;
-    text-align: left;
-  }
- 
-  
   .app-main-btns {
     margin-top: 8px;
     display: flex;
     gap: 24px;
     justify-content: center;
+    position: relative;
   }
   
-  .app-main-btns button {
-    width: 328px;
+  button {
+    position: relative;
+    width: 100%;
     height: 67px;
     border-radius: 24px;
     cursor: pointer;
@@ -121,12 +111,24 @@
   .btn-encript {
     background-color: var(--color-primary);
     color: #FFFFFF;
-  }
+    border-color: var(--color-primary);
+}
 
-  .btn-desencript {
+.btn-encript:hover {
+    background-color: var(--color-hover);
+    border-color: var(--color-hover);
+}
+
+.btn-desencript {
     background-color: #D8DFE8;
     color: var(--color-primary);
-  }
+    border-color: #D8DFE8;
+}
+
+.btn-desencript:hover {
+    background-color: #B0B7C3;
+    border-color: #B0B7C3;
+}
   
   .app .grid .app-result h3 {
     margin-top: 16px;
@@ -140,6 +142,7 @@
     color: var(--color-secondary);
     font-family: "Inter", sans-serif;
     font-size: 16px;
+    width: 100%;
   }
   
   .app .grid .app-result img {
@@ -149,14 +152,39 @@
     border-radius: 16px;
   }
 
+  .container-hidden {
+    display: none;
+    width: 100%;
+  }
+
+  /*Colocando estilos a las alertas*/
+  .swal2-title {
+    color: #343A40; /* Tomate */
+    font-family: "Inter", sans-serif;
+}
+
+  .swal2-html-container {
+    font-family: 'Inter', sans-serif;
+}
+
+  .swal2-actions .swal2-confirm {
+    background-color: var(--color-primary); /* Azul real */
+    border: none;
+    font-family: "Inter", sans-serif;
+}
+ 
   /*vista tablet */
   @media (max-width: 768px){
-    
+    .app .grid .app-content, .app .grid .app-result {
+      grid-column: span 12;
+    }
   }
   
 
   /*Vista de celular*/
   @media (max-width: 375px){
-    
+    .app-main-btns {
+      flex-direction: column;
+    }
   }
 

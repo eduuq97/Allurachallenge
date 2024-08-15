@@ -6,6 +6,7 @@
     <title>Encriptador</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
     <main id="app" class="app">
@@ -30,7 +31,10 @@
               <h3>Ningún mensaje fue encontrado</h3>
               <p>Ingresa el texto que desees encriptar o desencriptar.</p>
             </div>
-            <p id="text-desencript"></p>
+            <div class="container-hidden">
+              <p id="text-desencript"></p>
+              <button class="btn-desencript" id="btn-copy">Copiar</button>
+            </div>
           </section>
         </section>
       </main>
