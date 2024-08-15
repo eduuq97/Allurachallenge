@@ -64,7 +64,7 @@ function encript() {
     hideCover();
 
     // Actualiza el label e icono para encriptar
-    label.textContent = "Texto encriptado con éxito.";
+    label.textContent = "¡Texto encriptado con éxito!";
     label.style.color = "#28a745";  // Verde para éxito
     icon.className = "bi bi-check-circle-fill";  // Icono de éxito
     icon.style.color = "#28a745";  // Color verde para éxito
@@ -95,7 +95,7 @@ function desencript() {
     hideCover();
 
     // Actualiza el label e icono para desencriptar
-    label.textContent = "Texto desencriptado con éxito.";
+    label.textContent = "¡Texto desencriptado con éxito!";
     label.style.color = "#0A3871";  // Azul para éxito
     icon.className = "bi bi-check-circle-fill";  // Icono de éxito
     icon.style.color = "#0A3871";  // Color azul para éxito
